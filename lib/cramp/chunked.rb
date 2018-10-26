@@ -11,7 +11,7 @@ module Cramp
     CHUNKED_TAIL = "0#{CHUNKED_TERM}#{CHUNKED_TERM}"
 
     def render(body, *)
-      data = [ Rack::Utils.bytesize(body).to_s(16), CHUNKED_TERM, body, CHUNKED_TERM ].join
+      data = [ body.to_s.bytesize.to_s(16), CHUNKED_TERM, body, CHUNKED_TERM ].join
 
       @body.call(data)
     end

@@ -8,7 +8,7 @@ group :test do
 end
 
 group :example do
-  gem 'activerecord', '~> 4.2.0'
+  gem 'activerecord', '>= 4.2.0'
   gem 'mysql2', '~> 0.2.11'
 
   gem 'em-http-request'
@@ -19,7 +19,8 @@ group :example do
 
   gem 'erubis'
 
-  gem 'async-rack'
+  gem 'async-rack', git: 'https://github.com/kjavier/async-rack'
+
   gem 'async_sinatra'
 
   gem 'rainbows'
